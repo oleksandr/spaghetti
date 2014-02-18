@@ -34,5 +34,5 @@ If you don't have Web-socket client or too lazy to program it just use the follo
 
 ## An example of a topology you can build with spaghetti
 
-
+![Example](https://raw.github.com/oleksandr/spaghetti/master/example.png)
 
