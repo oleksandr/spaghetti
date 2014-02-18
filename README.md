@@ -28,3 +28,11 @@ There 3 endpoints for connecting to the router (either directly or using uplink)
 
 As you can guess, Pub mode will allow the connected client/router only to send message to the network. Sub mode will only wait for message delivered from router. PubSub is for a bi-directional communication.
 
+## Giving it a try
+
+If you don't have Web-socket client or too lazy to program it just use the following URL [http://www.websocket.org/echo.html](http://www.websocket.org/echo.html) with echo client implemented and connected to your router.
+
+## An example of a topology you can build with spaghetti
+
+
+
