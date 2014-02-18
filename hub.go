@@ -71,7 +71,7 @@ func (self *Hub) RouteMessage(message *Message) {
 
 	//TODO: Transform message
 
-	if self.Uplink != nil && self.UplinkType == ConnectionTypeSub || self.UplinkType == ConnectionTypePubSub {
+	if self.Uplink != nil && self.Uplink.ID != message.ConnId && (self.UplinkType == ConnectionTypeSub || self.UplinkType == ConnectionTypePubSub) {
 		select {
 		case self.Uplink.Send <- message:
 		default:
@@ -81,6 +81,10 @@ func (self *Hub) RouteMessage(message *Message) {
 	}
 
 	for id, c := range self.subscribers {
+		if c.ID == message.ConnId {
+			// Don't sent itself
+			continue
+		}
 		select {
 		case c.Send <- message:
 		default:

@@ -78,7 +78,8 @@ func (c *Connection) Writer() {
 			log.Printf("Connection.Writer(%v): ERROR sending JSON to WS! Error: %#v\n", c.ID, err)
 			continue
 		} else if err != nil {
-			log.Panicf("Connection.Writer(%v): Unhandled error: %#v", c.ID, err)
+			log.Printf("Connection.Writer(%v): Unhandled error: %#v", c.ID, err)
+			DefaultHub.Unregister <- c
 		}
 	}
 	c.WS.Close()
