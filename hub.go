@@ -61,17 +61,11 @@ func (self *Hub) Start() {
 func (self *Hub) RouteMessage(message *Message) {
 	log.Println("Hub.RouteMessage")
 
-	if len(self.subscribers) == 0 {
+	if _, ok := self.publishers[message.ConnId]; !ok {
 		return
 	}
 
-	if _, ok := self.publishers[message.ConnId]; !ok {
-		log.Printf("Hub.RouteMessage: ERROR %v is not a publisher, ignoring...\n", message.ConnId)
-	}
-
-	//TODO: Transform message
-
-	if self.Uplink != nil && self.Uplink.ID != message.ConnId && (self.UplinkType == ConnectionTypeSub || self.UplinkType == ConnectionTypePubSub) {
+	if self.Uplink != nil && self.Uplink.ID != message.ConnId && (self.UplinkType == ConnectionTypePub || self.UplinkType == ConnectionTypePubSub) {
 		select {
 		case self.Uplink.Send <- message:
 		default:

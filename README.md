@@ -20,7 +20,7 @@ Connecting to another spaghetti router:
 
 ## Available endpoints
 
-There 3 endpoints for connecting to the router (either directly or using uplink):
+There are 3 endpoints for connecting to the router (either directly or using uplink):
 
  - Pub (ws://localhost:3000/ws/pub)
  - Sub (ws://localhost:3000/ws/sub)
@@ -30,7 +30,7 @@ As you can guess, Pub mode will allow the connected client/router only to send m
 
 ## Giving it a try
 
-If you don't have Web-socket client or too lazy to program it just use the following URL [http://www.websocket.org/echo.html](http://www.websocket.org/echo.html) with echo client implemented and connected to your router.
+If you don't have Web-socket client or too lazy to program it just use the following URL [http://www.websocket.org/echo.html](http://www.websocket.org/echo.html) with echo client implemented to connect to your router.
 
 ## An example of a topology you can build with spaghetti
 

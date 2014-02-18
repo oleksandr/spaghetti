@@ -1,0 +1,4 @@
+ TODO:
+  ☐ Add support for WSS
+  ☐ Add shared secret support to limit access to spaghetti network
+  ☐ Constantly try to connect to a provided uplink when it's disconnected (to avoid restarting all clients)
