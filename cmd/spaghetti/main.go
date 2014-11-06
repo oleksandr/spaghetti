@@ -1,7 +1,7 @@
 package main
 
 import (
-	"code.google.com/p/go.net/websocket"
+	"golang.org/x/net/websocket"
 	"flag"
 	"fmt"
 	"github.com/oleksandr/spaghetti"

@@ -1,7 +1,7 @@
 package spaghetti
 
 import (
-	"code.google.com/p/go.net/websocket"
+	"golang.org/x/net/websocket"
 	"encoding/json"
 	uuid "github.com/nu7hatch/gouuid"
 	"io"
